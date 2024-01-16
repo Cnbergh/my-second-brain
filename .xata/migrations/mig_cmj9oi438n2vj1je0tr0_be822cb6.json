@@ -1,0 +1,76 @@
+{
+  "id": "mig_cmj9oi438n2vj1je0tr0",
+  "checksum": "1:be822cb61c78507f90621751b335409a242041ef2a942ab29c4c9175d0286e56",
+  "operations": [
+    {
+      "addTable": {
+        "table": "tag"
+      }
+    },
+    {
+      "addTable": {
+        "table": "image"
+      }
+    },
+    {
+      "addTable": {
+        "table": "tag-to-image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "gallery"
+        },
+        "table": "tag"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Image"
+        },
+        "table": "image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "file"
+        },
+        "table": "image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "link",
+          "link": {
+            "table": "image"
+          }
+        },
+        "table": "tag-to-image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "tag",
+          "type": "link",
+          "link": {
+            "table": "tag"
+          }
+        },
+        "table": "tag-to-image"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Christian-Bergh-s-workspace-j1ir5l.eu-central-1.xata.sh/db/SecondBrain",
+  "codegen": {
+    "output": "../xata.ts"
+  }
+}

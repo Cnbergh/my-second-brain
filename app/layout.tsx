@@ -6,6 +6,7 @@ import GlobalStyleProvider from './Providers/GlobalStyleProvider';
 import ContextProvider from './Providers/ContextProvider';
 import { ClerkProvider } from '@clerk/nextjs';
 import Nav from './Components/Navbar/Nav';
+import Header from './Components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,8 +25,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <ContextProvider>
-            <GlobalStyleProvider>
+              <Header/>
               <Nav />
+            <GlobalStyleProvider>
               <Sidebar />
               {children}
             </GlobalStyleProvider>
