@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import GlobalStyleProvider from "./Providers/GlobalStyleProvider";
 import ContextProvider from "./Providers/ContextProvider";
+import Nav from "./Components/Navbar/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ContextProvider>
           <GlobalStyleProvider>
+            <Nav/>
             <Sidebar />
             {children}
           </GlobalStyleProvider>
