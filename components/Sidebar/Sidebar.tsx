@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import {useGlobalState} from "@/app/Context/globalProvider";
+import {useGlobalState} from "@/Context/globalProvider";
 
 export default function Sidebar() {
     const {theme} = useGlobalState();
