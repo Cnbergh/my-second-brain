@@ -1,12 +1,20 @@
 'use client'
 import React, { useRef } from "react";
-import Container from "./Ui/Container";
+import Container from "../ui/container";
+import { Card, CardHeader, CardTitle } from "../ui/card";
 
 
 export default function TaskForm({handleCreateTask}: {handleCreateTask:(formData: FormData) => void}) {
     const ref = useRef<HTMLFormElement>(null);
     return (
         <Container>
+            <section>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>New task</CardTitle>
+                    </CardHeader>
+                </Card>
+            </section>
         <form className="mb-4 flex gap-x-2 items-center" action={(formData)=>{
             handleCreateTask(formData);
             ref.current?.reset();

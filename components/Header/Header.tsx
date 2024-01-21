@@ -3,6 +3,7 @@
 import { UserButton, useUser } from '@clerk/nextjs';
 import React from 'react';
 import Link from 'next/link';
+import Logo from './logo';
 
 export default function Header() {
   const { user, isLoaded } = useUser();
@@ -13,7 +14,7 @@ export default function Header() {
         aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className=" -m-1 p-1">
-            SecondBrain
+            <Logo/>
           </Link>
         </div>
         {isLoaded && user && (

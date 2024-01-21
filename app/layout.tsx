@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Sidebar from '../components/Sidebar/Sidebar';
+import Sidebar from '../components/sidebar/sidebar';
 import GlobalStyleProvider from '../Providers/GlobalStyleProvider';
 import ContextProvider from '../Providers/ContextProvider';
 import { ClerkProvider } from '@clerk/nextjs';
-import Nav from '../components/Navbar/Nav';
-import Header from '../components/Header/Header';
+import Nav from '../components/navbar/nav';
+import Header from '../components/header/header';
 
 const inter = Inter({ subsets: ['latin'] });
 

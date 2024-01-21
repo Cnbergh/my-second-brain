@@ -2,7 +2,7 @@ import { getXataClient } from '@/xata';
 import { z } from 'zod';
 import { revalidatePath } from "next/cache";
 import React from 'react';
-import TaskForm from '../../components/TaskForm';
+import TaskForm from '../../components/forms/taskForm';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/dist/server/api-utils';
 

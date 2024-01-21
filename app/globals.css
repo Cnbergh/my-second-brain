@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   /* Colors */
   --color-primary-background: var(--color-light-blue);
@@ -36,6 +37,7 @@ body {
 
   height: 100vh;
 }
+
 
 
 @layer base {

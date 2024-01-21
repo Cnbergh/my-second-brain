@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 
 // components
 /* import {navData} from "@/app/Context/navData" */
-import Tooltip from '../Ui/Tooltip';
+import Tooltip from '../ui/tooltip';
 
 // icons
 import {
