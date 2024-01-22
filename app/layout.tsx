@@ -7,6 +7,7 @@ import ContextProvider from '../Providers/ContextProvider';
 import { ClerkProvider } from '@clerk/nextjs';
 import Nav from '../components/navbar/nav';
 import Header from '../components/header/header';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
               {children}
             </GlobalStyleProvider>
           </ContextProvider>
+          <Toaster position='top-right' theme='light' richColors/>
         </body>
       </html>
     </ClerkProvider>

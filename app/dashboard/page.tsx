@@ -5,6 +5,7 @@ import React from 'react';
 import TaskForm from '../../components/forms/taskForm';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/dist/server/api-utils';
+import { toast } from 'sonner';
 
 const schema = z.object({
     name: z.string().min(3)
@@ -24,6 +25,7 @@ export default async function DashboardPage() {
         name: formData.get('name')
     })
     if(!userId) {
+      toast.error('UserID is required.')
         return
     }
     const newRecord = {...parsedForm, userId}
@@ -33,16 +35,16 @@ export default async function DashboardPage() {
     revalidatePath('/');
 }
   return (
-    <main>
+    <div>
       <h1 className='mb-4'>Dashboard page</h1>
       <div className='p-1'>
-        <TaskForm handleCreateTask={createForm}/>
-      </div>
-      <div>
         {tasks.map((Task) => (
           <p key={Task.id}>{Task.name}</p>
         ))}
       </div>
-    </main>
+      <div className='p-1'>
+        <TaskForm handleCreateTask={createForm}/>
+      </div>
+    </div>
   );
 }

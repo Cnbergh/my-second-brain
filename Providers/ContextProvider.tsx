@@ -2,7 +2,6 @@
 
 import React from "react"
 import {GlobalProvider} from "../Context/globalProvider";
-
 interface Props {
 children:React.ReactNode;
 }
