@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Sidebar from '../components/sidebar/sidebar';
 import GlobalStyleProvider from '../Providers/GlobalStyleProvider';
 import ContextProvider from '../Providers/ContextProvider';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -29,7 +28,6 @@ export default function RootLayout({
               <Header/>
               <Nav />
             <GlobalStyleProvider>
-              <Sidebar />
               {children}
             </GlobalStyleProvider>
           </ContextProvider>
