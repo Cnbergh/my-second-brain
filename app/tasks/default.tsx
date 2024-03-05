@@ -2,7 +2,7 @@ import { delay } from '@/lib/utils'
 import { getXataClient } from '@/xata';
 import { z } from 'zod';
 import { revalidatePath } from "next/cache";
-import TaskForm from '../../components/forms/taskForm';
+import {TaskForm} from '../../components/forms/taskForm';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/dist/server/api-utils';
 import { toast } from 'sonner';

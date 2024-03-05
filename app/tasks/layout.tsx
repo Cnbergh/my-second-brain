@@ -14,9 +14,7 @@ export default function TasksPageLayout(props: {
         direction="horizontal"
         className="min-h-[200px] rounded-lg border">
         <ResizablePanel defaultSize={10}>
-          <div className="flex h-full items-center justify-center p-6">
             <Sidebar />
-          </div>
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={85}>

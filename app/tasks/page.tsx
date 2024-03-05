@@ -2,13 +2,14 @@ import { getXataClient } from '@/xata';
 import { z } from 'zod';
 import { revalidatePath } from "next/cache";
 import React from 'react';
-import TaskForm from '../../components/forms/taskForm';
+import {TaskForm} from '../../components/forms/taskForm';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/dist/server/api-utils';
 import { toast } from 'sonner';
 
 const schema = z.object({
-    name: z.string().min(3)
+    name: z.string().min(3, "Task name should have at least 3 characters."),
+    estimatedTime: z.number().positive()
 })
 
 export default async function TasksPage() {
@@ -17,21 +18,23 @@ export default async function TasksPage() {
   if(!userId){
     redirect('/')
   }
-  const tasks = await xataClient.db.Task.filter({userId}).getMany();
+  const tasks = await xataClient.db.Task.filter({ userId }).getMany();
 
-  async function createForm(formData:FormData) {
-    'use server'
-   const parsedForm = schema.parse({
-        name: formData.get('name')
-    })
-    if(!userId) {
-      toast.error('UserID is required.')
-        return
+  async function createForm(data) {
+    'use server';
+    const parsedForm = schema.parse(data);
+    if (!userId) {
+      toast.error('UserID is required.');
+      return;
     }
     const newRecord = {...parsedForm, userId}
 
     const xataClient = getXataClient();
-    await xataClient.db.Task.create(newRecord)
+    await xataClient.db.Task.create({
+        name: newRecord.name,
+        userId: newRecord.userId,
+        estimatedTime: newRecord.estimatedTime
+      });
     revalidatePath('/');
 }
   return (

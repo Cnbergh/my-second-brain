@@ -17,7 +17,7 @@ import {
   HiHome,
   HiUser,
   HiMiniCurrencyDollar,
-  HiViewColumns,
+  HiMiniRectangleGroup,
 } from 'react-icons/hi2';
 
 // nav data
@@ -30,7 +30,7 @@ export const navData = [
   {
     name: 'dashboard',
     path: '/dashboard',
-    icon: <HiViewColumns />,
+    icon: <HiMiniRectangleGroup />,
   },
   {
     name: 'profile',

@@ -9,8 +9,8 @@ export default async function DashboardPage() {
     redirect('/')
   }
   return (
-    <div className='h-60 flex-1 rounded-xl bg-sky-800 p-10 text-white'>
-      <h1 className='text-3xl font-bold'>Dashboard page</h1>
+    <div className='w-full max-h-20 flex justify-center items-center text-start rounded-xl bg-sky-800 p-10 text-white'>
+      <h1 className='text-3xl'>Dashboard</h1>
     </div>
   );
 }

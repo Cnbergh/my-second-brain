@@ -45,7 +45,7 @@ export default function Sidebar() {
   const router = useRouter();
   const pathname = router.pathname;
   return (
-    <aside className="flex w-full flex-col justify-between">
+    <aside className="flex w-full flex-col justify-between max-w-20">
       <section className="flex w-full items-start justify-center m-auto">
         <nav className="flex w-full flex-col items-center justify-center gap-y-10 px-4 xl:px-0 h-full xl:h-max py-8 text-3xl xl:text-xl">
           {navData.map((link, index) => {

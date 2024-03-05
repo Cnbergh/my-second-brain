@@ -7,7 +7,7 @@ interface Props {
 
 function GlobalStyleProvider({ children }: Props) {
   return (
-    <div className="min-h-screen p-10 flex flex-row gap-1">{children}</div>
+    <div className="min-h-screen p-1 flex flex-row gap-1">{children}</div>
   );
 }
 
